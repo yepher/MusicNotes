@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* MusicNotes */ = {
+		activeExec = 0;
+		executables = (
+			C12F8FBE12E9E91300889EB2 /* MusicNotes */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = C12F8FBE12E9E91300889EB2 /* MusicNotes */;
+		activeSDKPreference = iphonesimulator4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* MusicNotes */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* MusicNotes */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = C191DEF912DD594100FC20EB /* Code sense */;
+		executables = (
+			C12F8FBE12E9E91300889EB2 /* MusicNotes */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					558,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					572,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 320084166;
+			PBXWorkspaceStateSaveDate = 320084166;
+		};
+		perUserProjectItems = {
+			C111023513142E9900C39DC4 /* PlistBookmark */ = C111023513142E9900C39DC4 /* PlistBookmark */;
+			C111023613142E9900C39DC4 /* PBXBookmark */ = C111023613142E9900C39DC4 /* PBXBookmark */;
+			C111023713142E9900C39DC4 /* PBXBookmark */ = C111023713142E9900C39DC4 /* PBXBookmark */;
+			C1C318A412FCB48E005F79CD /* PBXTextBookmark */ = C1C318A412FCB48E005F79CD /* PBXTextBookmark */;
+		};
+		sourceControlManager = C191DEF812DD594100FC20EB /* Source Control */;
+		userBookmarkGroup = C1C3146912F61B13005F79CD /* PBXBookmarkGroup */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 736}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 364}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* MusicNotes_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1297, 195}}";
+			sepNavSelRange = "{436, 0}";
+			sepNavVisRange = "{0, 435}";
+		};
+	};
+	8D1107310486CEB800E47090 /* MusicNotes-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{503, 24}, {937, 854}}";
+		};
+	};
+	C111023513142E9900C39DC4 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* MusicNotes-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/chwilson/working/mfluent/MusicNotes/MusicNotes-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C111023613142E9900C39DC4 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = C137B58312E640DE00FFC161 /* Icon.png */;
+	};
+	C111023713142E9900C39DC4 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = C137B58312E640DE00FFC161 /* Icon.png */;
+	};
+	C11A947B12E21B9F0049A873 /* MusicNotesViewController_Pad.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {838, 688}}";
+			sepNavSelRange = "{752, 0}";
+			sepNavVisRange = "{0, 1171}";
+		};
+	};
+	C11A947C12E21B9F0049A873 /* MusicNotesViewController_Pad.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1297, 2093}}";
+			sepNavSelRange = "{560, 25}";
+			sepNavVisRange = "{408, 310}";
+			sepNavWindowFrame = "{{70, 24}, {937, 854}}";
+		};
+	};
+	C12F8FBE12E9E91300889EB2 /* MusicNotes */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = MusicNotes;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	C12F901912E9E92A00889EB2 /* keyboardLayout.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{90, 68}, {833, 810}}";
+		};
+	};
+	C12F909D12E9E93900889EB2 /* EbonyKeyView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 736}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 233}";
+		};
+	};
+	C12F909E12E9E93900889EB2 /* EbonyKeyView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{303, 0}";
+			sepNavVisRange = "{0, 756}";
+		};
+	};
+	C12F909F12E9E93900889EB2 /* IvoryKeyView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 736}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 234}";
+		};
+	};
+	C12F90A012E9E93900889EB2 /* IvoryKeyView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {641, 575}}";
+			sepNavSelRange = "{218, 0}";
+			sepNavVisRange = "{0, 692}";
+			sepNavWindowFrame = "{{49, 63}, {833, 810}}";
+		};
+	};
+	C12F90A112E9E93900889EB2 /* KeyBase.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{198, 0}";
+			sepNavVisRange = "{0, 578}";
+		};
+	};
+	C12F90A212E9E93900889EB2 /* KeyBase.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {641, 2340}}";
+			sepNavSelRange = "{733, 0}";
+			sepNavVisRange = "{1155, 964}";
+		};
+	};
+	C12F90A312E9E93900889EB2 /* KeyboardView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{622, 15}";
+			sepNavVisRange = "{0, 860}";
+		};
+	};
+	C12F90A412E9E93900889EB2 /* KeyboardView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1580, 3289}}";
+			sepNavSelRange = "{8126, 0}";
+			sepNavVisRange = "{6986, 1586}";
+		};
+	};
+	C12F90A612E9E93900889EB2 /* OctaveRangeSelectionView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {760, 1008}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 743}";
+		};
+	};
+	C12F90A712E9E93900889EB2 /* OctaveRangeSelectionView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {922, 2548}}";
+			sepNavSelRange = "{1593, 0}";
+			sepNavVisRange = "{0, 1567}";
+		};
+	};
+	C12F90AD12E9E93900889EB2 /* MusicStaffView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{1004, 0}";
+			sepNavVisRange = "{0, 1032}";
+		};
+	};
+	C12F90AE12E9E93900889EB2 /* MusicStaffView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {782, 1898}}";
+			sepNavSelRange = "{3358, 0}";
+			sepNavVisRange = "{1886, 1898}";
+			sepNavWindowFrame = "{{73, 42}, {997, 810}}";
+		};
+	};
+	C12F90C712E9E9DB00889EB2 /* MusicNotesViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 1274}}";
+			sepNavSelRange = "{351, 9}";
+			sepNavVisRange = "{0, 1218}";
+			sepNavWindowFrame = "{{72, 42}, {997, 810}}";
+		};
+	};
+	C12F90C812E9E9DB00889EB2 /* MusicNotesViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{863, 9}";
+			sepNavVisRange = "{0, 1026}";
+		};
+	};
+	C179B65812ED297E00076096 /* GameController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 736}}";
+			sepNavSelRange = "{203, 41}";
+			sepNavVisRange = "{0, 716}";
+		};
+	};
+	C179B65912ED297E00076096 /* GameController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 1339}}";
+			sepNavSelRange = "{1155, 0}";
+			sepNavVisRange = "{1101, 1243}";
+		};
+	};
+	C191DEF812DD594100FC20EB /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	C191DEF912DD594100FC20EB /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	C1B02D0812ECCCA400168545 /* NoteView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{272, 0}";
+			sepNavVisRange = "{0, 355}";
+		};
+	};
+	C1B02D0912ECCCA400168545 /* NoteView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {894, 1040}}";
+			sepNavSelRange = "{1423, 0}";
+			sepNavVisRange = "{364, 1534}";
+		};
+	};
+	C1C3146912F61B13005F79CD /* PBXBookmarkGroup */ = {
+		isa = PBXBookmarkGroup;
+		children = (
+			C1C317D512F7BA61005F79CD /* PBXBookmark */,
+		);
+		name = Root;
+	};
+	C1C317D512F7BA61005F79CD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = C11A947C12E21B9F0049A873 /* MusicNotesViewController_Pad.m */;
+	};
+	C1C317F412F7C128005F79CD /* FlatSymbol.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 209}";
+		};
+	};
+	C1C317F512F7C128005F79CD /* FlatSymbol.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {7376, 1716}}";
+			sepNavSelRange = "{1660, 0}";
+			sepNavVisRange = "{236, 3797}";
+		};
+	};
+	C1C318A412FCB48E005F79CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C12F90AE12E9E93900889EB2 /* MusicStaffView.m */;
+		name = "MusicStaffView.m: 119";
+		rLen = 0;
+		rLoc = 3358;
+		rType = 0;
+		vrLen = 1898;
+		vrLoc = 1886;
+	};
+	C1D793C312EBBAFB00A7CC38 /* BassClefSymbol.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {799, 682}}";
+			sepNavSelRange = "{211, 0}";
+			sepNavVisRange = "{0, 217}";
+		};
+	};
+	C1D793C412EBBAFB00A7CC38 /* BassClefSymbol.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {7593, 1560}}";
+			sepNavSelRange = "{8364, 0}";
+			sepNavVisRange = "{42, 2826}";
+		};
+	};
+	C1D793C612EBBB8A00A7CC38 /* TrebleClefSymbol.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{215, 0}";
+			sepNavVisRange = "{0, 215}";
+		};
+	};
+	C1D793C712EBBB8A00A7CC38 /* TrebleClefSymbol.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {5465, 1716}}";
+			sepNavSelRange = "{1246, 0}";
+			sepNavVisRange = "{0, 1847}";
+		};
+	};
+	C1E0219012E9ED81005B342D /* MusicNotesAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1092}}";
+			sepNavSelRange = "{240, 21}";
+			sepNavVisRange = "{0, 1974}";
+			sepNavWindowFrame = "{{1478, 296}, {997, 810}}";
+		};
+	};
+	C1E0219112E9ED81005B342D /* MusicNotesAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {799, 682}}";
+			sepNavSelRange = "{175, 0}";
+			sepNavVisRange = "{0, 497}";
+		};
+	};
+	C1E021A312E9EEEB005B342D /* MusicNotesAppDelegate_Pad.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1066}}";
+			sepNavSelRange = "{802, 0}";
+			sepNavVisRange = "{0, 1911}";
+		};
+	};
+	C1E021A412E9EEEB005B342D /* MusicNotesAppDelegate_Pad.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {760, 1008}}";
+			sepNavSelRange = "{176, 0}";
+			sepNavVisRange = "{0, 513}";
+		};
+	};
+	C1E021F312E9F936005B342D /* StaffDrawingView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 688}}";
+			sepNavSelRange = "{761, 16}";
+			sepNavVisRange = "{0, 801}";
+		};
+	};
+	C1E021F412E9F936005B342D /* StaffDrawingView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {936, 2600}}";
+			sepNavSelRange = "{2680, 0}";
+			sepNavVisRange = "{1778, 2164}";
+		};
+	};
+}
