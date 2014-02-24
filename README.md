@@ -8,9 +8,6 @@ open source the project so it does not sit and just go to waste.
 
 Big thanks to Craig Wilson at http://wilsonics.com for creating the piano samples.
 
-What is the best way to mount a Computer Keyboard to a Piano. Here is an idea I have: 
-http://www.quirky.com/invent/874044/action/vote/query/sort=ending_soon&categories=all
-
 
 Things I would like to do:
 ===========================
