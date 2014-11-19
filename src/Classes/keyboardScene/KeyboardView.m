@@ -26,12 +26,12 @@
  visibleKeyRange.location represents the number of ivory keys but the keyNames array contains 
  ebony keys as well, so this maps visibleKeyRange.location to keynames array index
  **/
-- (int) convertToKeynameOffset: (int) location {
-    int indexes[] = {0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 19, 20, 22, 24, 26, 27, 29, 31, 32, 34, 36, 38, 39, 41, 43, 44, 46, 48, 50, 51, 53, 55, 56, 58, 60, 62, 63, 65, 67, 68, 70, 72, 74, 75, 77, 79, 80, 82, 84, 86, 87 };
+- (NSInteger) convertToKeynameOffset: (NSUInteger) location {
+    NSInteger indexes[] = {0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 19, 20, 22, 24, 26, 27, 29, 31, 32, 34, 36, 38, 39, 41, 43, 44, 46, 48, 50, 51, 53, 55, 56, 58, 60, 62, 63, 65, 67, 68, 70, 72, 74, 75, 77, 79, 80, 82, 84, 86, 87 };
     return indexes[location];
 }
 
-- (void) addIvoryKey:(int)keyIndex ivoryIndex:(int)ivoryIndex ivoryWidth:(float)ivoryWidth keyBackground:(UIImage*)keyBackground keyHighlightBackground:(UIImage*)keyHighlightBackground title:(NSString*)title {
+- (void) addIvoryKey:(NSInteger)keyIndex ivoryIndex:(NSInteger)ivoryIndex ivoryWidth:(CGFloat)ivoryWidth keyBackground:(UIImage*)keyBackground keyHighlightBackground:(UIImage*)keyHighlightBackground title:(NSString*)title {
     IvoryKeyView* key = [[IvoryKeyView alloc] initWithImage:keyBackground];
     [key setIntId:keyIndex];
     
@@ -53,7 +53,7 @@
     [self sendSubviewToBack:key];
 }
 
-- (void) addEbonyKey:(int)keyIndex ivoryIndex:(int)ivoryIndex ivoryWidth:(float)ivoryWidth ebonyWidth:(float)ebonyWidth keyBackground:(UIImage*)keyBackground keyHighlightBackground:(UIImage*)keyHighlightBackground {
+- (void) addEbonyKey:(NSInteger)keyIndex ivoryIndex:(NSInteger)ivoryIndex ivoryWidth:(CGFloat)ivoryWidth ebonyWidth:(CGFloat)ebonyWidth keyBackground:(UIImage*)keyBackground keyHighlightBackground:(UIImage*)keyHighlightBackground {
     EbonyKeyView* key = [[EbonyKeyView alloc] initWithImage:keyBackground];
     [key setIntId:keyIndex];
     
@@ -98,7 +98,7 @@
     [super layoutSubviews];
     [self removeAllKeysFromView];
     
-    int keyNameOffset = [self convertToKeynameOffset: visibleKeyRange.location];
+    NSUInteger keyNameOffset = [self convertToKeynameOffset: visibleKeyRange.location];
     // Load Keys
     float ivoryWidth = self.frame.size.width/visibleKeyRange.length;
     
@@ -118,10 +118,10 @@
     }
     
     // Layout rest of keys in range
-    int currentIvoryCount = 0;
-    int currentKeyCount = 0;
+    NSInteger currentIvoryCount = 0;
+    NSInteger currentKeyCount = 0;
     for (; currentIvoryCount < visibleKeyRange.length && (keyNameOffset + currentKeyCount) < [keyNames count]; currentKeyCount++) {
-        int index = (keyNameOffset + currentKeyCount);
+        NSInteger index = (keyNameOffset + currentKeyCount);
         keyName = keyNames[(keyNameOffset + currentKeyCount)];
         
         if ([keyName hasSuffix:@"s"]) {
@@ -135,7 +135,7 @@
     }
     
     // Special case possible last ebony key
-    int nextKeyIndex = (keyNameOffset+currentKeyCount);
+    NSInteger nextKeyIndex = (keyNameOffset+currentKeyCount);
     if (nextKeyIndex < [keyNames count]) {
         keyName = keyNames[nextKeyIndex];
         if ([keyName hasSuffix:@"s"]) {
@@ -145,14 +145,14 @@
     
 }
 
-- (id) initWithCoder:(NSCoder *)aCoder {
+- (instancetype) initWithCoder:(NSCoder *)aCoder {
     if( self = [super initWithCoder:aCoder]){
         [self internalInit];
     }
     return self;
 }
                
-- (id) initWithFrame:(CGRect)rect{
+- (instancetype) initWithFrame:(CGRect)rect{
     if(self = [super initWithFrame:rect]){
         [self internalInit];
     }
@@ -233,7 +233,7 @@
                 if ([touch phase] == UITouchPhaseEnded || [touch phase] == UITouchPhaseCancelled) {
                     [key setHighlighted:NO];
                 } else {
-                    NSLog(@"Unhandled touch phase: %d", [touch phase] );
+                    NSLog(@"Unhandled touch phase: %@", @([touch phase]) );
                 }
             }
         }

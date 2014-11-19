@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
+IB_DESIGNABLE
 @interface KeyBase : UIImageView {
     UILabel* label;
     
@@ -28,7 +28,7 @@
 @property (nonatomic, strong) NSNumber* keyId;
 
 
-- (void) setIntId: (int) intKeyId;
+- (void) setIntId: (NSInteger) intKeyId;
 + (UIColor*) colorForNote: (unichar) note;
 
 @end

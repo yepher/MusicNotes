@@ -41,14 +41,14 @@
     //NSLog(@"Keycount = %f", self.bounds.size.width/56);
 }
 
-- (id) initWithCoder:(NSCoder *)aCoder {
+- (instancetype) initWithCoder:(NSCoder *)aCoder {
     if( self = [super initWithCoder:aCoder]){
         [self internalInit];
     }
     return self;
 }
 
-- (id) initWithFrame:(CGRect)rect{
+- (instancetype) initWithFrame:(CGRect)rect{
     if(self = [super initWithFrame:rect]){
         [self internalInit];
     }
@@ -178,8 +178,8 @@
     previousDistance = 0;
 
     if ([self delegate] != nil) {
-        int numKeys = lround((maskView.frame.size.width/keyboadBackground.frame.size.width)*52);
-        int offset = lround(( (maskView.frame.origin.x-keyboadBackground.frame.origin.x) /keyboadBackground.frame.size.width)*52);
+        NSInteger numKeys = lround((maskView.frame.size.width/keyboadBackground.frame.size.width)*52);
+        NSInteger offset = lround(( (maskView.frame.origin.x-keyboadBackground.frame.origin.x) /keyboadBackground.frame.size.width)*52);
         
         NSRange newRange = NSMakeRange(offset, numKeys);
         [[self delegate] rangeChanged:newRange];

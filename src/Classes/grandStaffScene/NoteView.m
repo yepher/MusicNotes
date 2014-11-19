@@ -20,21 +20,21 @@
     
 }
 
-- (id) init {
+- (instancetype) init {
     if( self = [super init]){
         [self internalInit];
     }
     return self;
 }
     
-- (id) initWithCoder:(NSCoder *)aCoder {
+- (instancetype) initWithCoder:(NSCoder *)aCoder {
     if( self = [super initWithCoder:aCoder]){
         [self internalInit];
     }
     return self;
 }
 
-- (id) initWithFrame:(CGRect)rect{
+- (instancetype) initWithFrame:(CGRect)rect{
     if(self = [super initWithFrame:rect]){
         [self internalInit];
     }

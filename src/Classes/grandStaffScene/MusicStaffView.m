@@ -39,14 +39,14 @@
     [self setBackgroundColor:HEXCOLOR(0xF7F8E0FF)];
 }
 
-- (id) initWithCoder:(NSCoder *)aCoder {
+- (instancetype) initWithCoder:(NSCoder *)aCoder {
     if( self = [super initWithCoder:aCoder]){
         [self internalInit];
     }
     return self;
 }
 
-- (id) initWithFrame:(CGRect)rect{
+- (instancetype) initWithFrame:(CGRect)rect{
     if(self = [super initWithFrame:rect]){
         [self internalInit];
     }
@@ -60,7 +60,7 @@
     CGRect drawingFrame = [self frame];
     drawingFrame.origin.x = 0;
     drawingFrame.origin.y = 0;
-    [staffDrawingView setFrame:drawingFrame];
+    [self.staffDrawingView setFrame:drawingFrame];
 }
 
 - (void) addNotes: (NSSet*) newNotes {
@@ -124,8 +124,8 @@
     }
 }
 
-- (void) displayNote: (int) keyNumber {
-    NSLog(@"TODO: Engrave note: %d", keyNumber);
+- (void) displayNote: (NSInteger) keyNumber {
+    NSLog(@"TODO: Engrave note: %@", @(keyNumber));
 }
 
 @end

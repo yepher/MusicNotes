@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
+IB_DESIGNABLE
 @interface NoteView : UIView {
     NSInteger keyNumber;
     UIImageView* noteImage;

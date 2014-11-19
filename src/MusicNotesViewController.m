@@ -23,15 +23,15 @@
 
 
 
-- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle {
+- (instancetype)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle {
     if (!(self = [super initWithNibName:nibName bundle:nibBundle])) return nil;
     return self;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return YES; //(interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+//    // Return YES for supported orientations
+//    return YES; //(interfaceOrientation == UIInterfaceOrientationPortrait);
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -67,20 +67,20 @@
 }
 
 - (void) keysPressed:(NSSet *)keys {
-    NSLog(@"keysPressed=%d", [keys count]);
+    NSLog(@"keysPressed=%@", @([keys count]));
     
     [drawingView addNotes:keys];
     
     for (NSNumber* keyIndex in keys) {
         if ([audio count] > [keyIndex intValue]) {
-            SystemSoundID soundID = [audio[[keyIndex intValue]] unsignedLongValue];
+            SystemSoundID soundID =(SystemSoundID) [audio[[keyIndex intValue]] unsignedLongValue];
             AudioServicesPlaySystemSound(soundID);
         }
     }
 }
 
 - (void) rangeChanged: (NSRange) newRange {
-    NSLog(@"Got new range %d, %d", newRange.location, newRange.length);
+    NSLog(@"Got new range %@, %@", @(newRange.location), @(newRange.length));
     [keyboardView setVisibleKeyRange:newRange];
     [keyboardView setNeedsLayout];
 }

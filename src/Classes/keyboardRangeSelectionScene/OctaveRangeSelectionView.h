@@ -12,6 +12,7 @@
 - (void) rangeChanged: (NSRange) newRange;
 @end
 
+IB_DESIGNABLE
 @interface OctaveRangeSelectionView : UIView {
     id <OctaveRangeDelegate> delegate;
     

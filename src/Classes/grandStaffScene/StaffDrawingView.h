@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
+IB_DESIGNABLE
 @interface StaffDrawingView : UIView {
     float spacing;
     CGRect trebleCleffFrame;
@@ -29,6 +29,6 @@
 @property (nonatomic, strong) UIImageView* trebleCleffSymbol;
 @property (nonatomic, strong) UIImageView* bassCleffSymbol;
 
--(float) getNoteYLocation:(int) keyNumber;
+-(CGFloat) getNoteYLocation:(NSInteger) keyNumber;
 
 @end

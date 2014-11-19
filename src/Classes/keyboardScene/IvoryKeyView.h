@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KeyBase.h"
 
-
+IB_DESIGNABLE
 @interface IvoryKeyView : KeyBase {
 
 }

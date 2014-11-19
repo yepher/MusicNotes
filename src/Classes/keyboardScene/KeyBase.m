@@ -91,6 +91,7 @@ static UIColor* gColor = nil;
 }
 
 - (void)layoutSubviews {
+    [super layoutSubviews];
     CGRect labelFrame = CGRectZero;
     labelFrame.size.width = (self.frame.size.width*.65);
     labelFrame.size.height = (self.frame.size.width/2);
@@ -127,28 +128,28 @@ static UIColor* gColor = nil;
     [label setAdjustsFontSizeToFitWidth:YES];
 }
 
-- (id) initWithCoder:(NSCoder *)aCoder {
+- (instancetype) initWithCoder:(NSCoder *)aCoder {
     if( self = [super initWithCoder:aCoder]){
         //[self initialize];
     }
     return self;
 }
 
-- (id) initWithFrame:(CGRect)rect{
+- (instancetype) initWithFrame:(CGRect)rect{
     if(self = [super initWithFrame:rect]){
         //[self initialize];
     }
     return self;
 }
 
-- (id) initWithImage:(UIImage *)image {
+- (instancetype) initWithImage:(UIImage *)image {
     if(self = [super initWithImage:image]){
         [self internalBaseInit];
     }
     return self;
 }
 
-- (void) setIntId: (int) intKeyId {
+- (void) setIntId: (NSInteger) intKeyId {
     [self setKeyId:@(intKeyId)];
 }
 

@@ -21,7 +21,7 @@
 #define EBONY_KEY_HEIGHT .5
 
 
-
+IB_DESIGNABLE
 @interface KeyboardView : UIView {
     BOOL doubleEbonySize;
     id <KeyboardViewDelegate> delegate;

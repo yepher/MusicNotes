@@ -64,7 +64,7 @@
 }
 
 - (void) keysPressed:(NSSet *)keys {
-    NSLog(@"GAME: keysPressed=%d", [keys count]);
+    NSLog(@"GAME: keysPressed=%@", @([keys count]));
     
     if (currentQuestion != nil) {
         if ([keys count] != [currentQuestion count]) {

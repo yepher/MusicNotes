@@ -101,14 +101,14 @@
     
 }
 
-- (id) initWithCoder:(NSCoder *)aCoder {
+- (instancetype) initWithCoder:(NSCoder *)aCoder {
     if( self = [super initWithCoder:aCoder]){
         [self internalInit];
     }
     return self;
 }
 
-- (id) initWithFrame:(CGRect)rect{
+- (instancetype) initWithFrame:(CGRect)rect{
     if(self = [super initWithFrame:rect]){
         [self internalInit];
     }
@@ -119,13 +119,13 @@
     [super layoutSubviews];
 }
 
-- (void) drawStaff:(CGContextRef)ctx staffFrame:(CGRect)staffFrame  lineSpacing:(float) lineSpacing {
+- (void) drawStaff:(CGContextRef)ctx staffFrame:(CGRect)staffFrame  lineSpacing:(CGFloat) lineSpacing {
     float staffRightSide = staffFrame.origin.x + staffFrame.size.width;
     
     CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 1); 
     CGContextSetLineWidth(ctx, .5);
     
-    float yOffset = staffFrame.origin.y;
+    CGFloat yOffset = staffFrame.origin.y;
     for (int i = 0; i <= 4; i++) {
         
         CGContextMoveToPoint(ctx, staffFrame.origin.x, yOffset);
@@ -160,7 +160,7 @@
     [self drawStaff:ctx staffFrame:bassCleffFrame lineSpacing:spacing];
 }
 
--(float) getNoteYLocation:(int) keyNumber {
+-(CGFloat) getNoteYLocation:(NSInteger) keyNumber {
     
     int staffTop = trebleCleffFrame.origin.y;
     

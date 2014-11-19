@@ -10,6 +10,7 @@
 
 @class StaffDrawingView;
 
+IB_DESIGNABLE
 @interface MusicStaffView : UIView {
     NSMutableArray* noteViewCache;
     
@@ -37,7 +38,7 @@
 @property (nonatomic) BOOL showOutsideLedger;
 
 - (void) addNotes: (NSSet*) notes;
-- (void) displayNote: (int) keyNumber;
+- (void) displayNote: (NSInteger) keyNumber;
 - (void) clearNotes;
 
 @end

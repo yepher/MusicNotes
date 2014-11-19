@@ -17,21 +17,21 @@
     [self setHelpColorHidden:YES];
 }
 
-- (id) initWithCoder:(NSCoder *)aCoder {
+- (instancetype) initWithCoder:(NSCoder *)aCoder {
     if( self = [super initWithCoder:aCoder]){
         [self internalInit];
     }
     return self;
 }
 
-- (id) initWithFrame:(CGRect)rect{
+- (instancetype) initWithFrame:(CGRect)rect{
     if(self = [super initWithFrame:rect]){
         [self internalInit];
     }
     return self;
 }
 
-- (id) initWithImage:(UIImage *)image {
+- (instancetype) initWithImage:(UIImage *)image {
     if(self = [super initWithImage:image]){
         [self internalInit];
     }
