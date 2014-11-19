@@ -119,7 +119,7 @@
     [super layoutSubviews];
 }
 
-- (void) drawStaff: (CGContextRef) ctx: (CGRect) staffFrame : (float) lineSpacing {
+- (void) drawStaff:(CGContextRef)ctx staffFrame:(CGRect)staffFrame  lineSpacing:(float) lineSpacing {
     float staffRightSide = staffFrame.origin.x + staffFrame.size.width;
     
     CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 1); 
@@ -154,11 +154,10 @@
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 
     // Draw Treble Staff
-    [self drawStaff:ctx :trebleCleffFrame :spacing];
+    [self drawStaff:ctx staffFrame:trebleCleffFrame lineSpacing:spacing];
     
     // Draw Bass Staff
-    [self drawStaff:ctx :bassCleffFrame :spacing];
-    
+    [self drawStaff:ctx staffFrame:bassCleffFrame lineSpacing:spacing];
 }
 
 -(float) getNoteYLocation:(int) keyNumber {

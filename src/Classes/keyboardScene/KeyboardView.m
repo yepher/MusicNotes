@@ -31,7 +31,7 @@
     return indexes[location];
 }
 
-- (void) addIvoryKey:(int)keyIndex: (int) ivoryIndex: (float)ivoryWidth: (UIImage*)keyBackground :(UIImage*)keyHighlightBackground: (NSString*)title {
+- (void) addIvoryKey:(int)keyIndex ivoryIndex:(int)ivoryIndex ivoryWidth:(float)ivoryWidth keyBackground:(UIImage*)keyBackground keyHighlightBackground:(UIImage*)keyHighlightBackground title:(NSString*)title {
     IvoryKeyView* key = [[IvoryKeyView alloc] initWithImage:keyBackground];
     [key setIntId:keyIndex];
     
@@ -53,7 +53,7 @@
     [self sendSubviewToBack:key];
 }
 
-- (void) addEbonyKey:(int)keyIndex: (int) ivoryIndex: (float) ivoryWidth: (float)ebonyWidth: (UIImage*)keyBackground :(UIImage*)keyHighlightBackground {
+- (void) addEbonyKey:(int)keyIndex ivoryIndex:(int)ivoryIndex ivoryWidth:(float)ivoryWidth ebonyWidth:(float)ebonyWidth keyBackground:(UIImage*)keyBackground keyHighlightBackground:(UIImage*)keyHighlightBackground {
     EbonyKeyView* key = [[EbonyKeyView alloc] initWithImage:keyBackground];
     [key setIntId:keyIndex];
     
@@ -113,7 +113,7 @@
     if (keyNameOffset > 0) {
         keyName = keyNames[(keyNameOffset-1)];
         if ([keyName hasSuffix:@"s"]) {
-            [self addEbonyKey:keyNameOffset-1: 0: ivoryWidth: ivoryWidth * EBONY_KEY_WIDTH: ebonyKeyBackground: ebonyKeyHighlightBackground];
+            [self addEbonyKey:keyNameOffset-1 ivoryIndex:0 ivoryWidth:ivoryWidth * EBONY_KEY_WIDTH ebonyWidth:EBONY_KEY_WIDTH keyBackground:ebonyKeyBackground keyHighlightBackground:ebonyKeyHighlightBackground];
         }
     }
     
@@ -125,9 +125,11 @@
         keyName = keyNames[(keyNameOffset + currentKeyCount)];
         
         if ([keyName hasSuffix:@"s"]) {
-            [self addEbonyKey:index: currentIvoryCount: ivoryWidth: ivoryWidth * EBONY_KEY_WIDTH: ebonyKeyBackground: ebonyKeyHighlightBackground];
+            [self addEbonyKey:index ivoryIndex:currentIvoryCount ivoryWidth:ivoryWidth * EBONY_KEY_WIDTH ebonyWidth:EBONY_KEY_WIDTH keyBackground:ebonyKeyBackground keyHighlightBackground:ebonyKeyHighlightBackground];
+            
         } else {
-            [self addIvoryKey:index: currentIvoryCount: ivoryWidth: ivoryKeyBackground: ivoryKeyHighlightBackground: keyName];
+            [self addIvoryKey:index ivoryIndex:currentIvoryCount ivoryWidth:ivoryWidth keyBackground:ivoryKeyBackground keyHighlightBackground:ivoryKeyHighlightBackground title:keyName];
+            
             currentIvoryCount++;
         }
     }
@@ -137,7 +139,7 @@
     if (nextKeyIndex < [keyNames count]) {
         keyName = keyNames[nextKeyIndex];
         if ([keyName hasSuffix:@"s"]) {
-            [self addEbonyKey:nextKeyIndex: currentIvoryCount: ivoryWidth: ivoryWidth * EBONY_KEY_WIDTH: ebonyKeyBackground: ebonyKeyHighlightBackground];
+            [self addEbonyKey:nextKeyIndex ivoryIndex:currentIvoryCount ivoryWidth:ivoryWidth * EBONY_KEY_WIDTH ebonyWidth:EBONY_KEY_WIDTH keyBackground:ebonyKeyBackground keyHighlightBackground:ebonyKeyHighlightBackground];
         }
     }
     

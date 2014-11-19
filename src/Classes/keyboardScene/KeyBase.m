@@ -98,7 +98,7 @@ static UIColor* gColor = nil;
     labelFrame.origin.x = (self.frame.size.width - labelFrame.size.width)/2;
 
     [label setFrame:labelFrame];
-    [label setTextAlignment:UITextAlignmentCenter];
+    [label setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:label];
     [self bringSubviewToFront:label];
 
