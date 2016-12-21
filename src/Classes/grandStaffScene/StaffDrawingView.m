@@ -49,14 +49,14 @@
 }
 
 - (void) setFrame:(CGRect)rect {
-    [super setFrame:rect];
+    super.frame = rect;
     [self updateFrameSize: rect];
 }
 
 -(void) internalInit {
-    [self setBackgroundColor:[UIColor clearColor]];
+    self.backgroundColor = [UIColor clearColor];
     
-    [self updateFrameSize:[self frame]];
+    [self updateFrameSize:self.frame];
     
     /**
      TODO:
@@ -65,23 +65,23 @@
      **/
     
     // Draw end brace
-    [self setGrandStaffBrace:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grandStaffBrace.png"]]];
-    CGRect grandStaffFrame = [grandStaffBrace frame];
+    self.grandStaffBrace = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"grandStaffBrace.png"]];
+    CGRect grandStaffFrame = grandStaffBrace.frame;
     grandStaffFrame.size.width = LEFT_MARGIN;
     grandStaffFrame.origin.x = trebleCleffFrame.origin.x - grandStaffFrame.size.width - 5;
     grandStaffFrame.origin.y = trebleCleffFrame.origin.y - 8;
     grandStaffFrame.size.height = (bassCleffFrame.origin.y+bassCleffFrame.size.height) - trebleCleffFrame.origin.y + CENTER_SPACING;
-    [grandStaffBrace setFrame:grandStaffFrame];
+    grandStaffBrace.frame = grandStaffFrame;
     [self addSubview:grandStaffBrace];
     
     // Draw treble cleff sign
-    [self setTrebleCleffSymbol:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trebleClef.png"]]];
-    CGRect clefFrame = [trebleCleffSymbol frame];
+    self.trebleCleffSymbol = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trebleClef.png"]];
+    CGRect clefFrame = trebleCleffSymbol.frame;
     clefFrame.size.height = 5*spacing;
     clefFrame.size.width = clefFrame.size.height*.75;
     clefFrame.origin.x = trebleCleffFrame.origin.x+5;
     clefFrame.origin.y = trebleCleffFrame.origin.y-spacing;
-    [trebleCleffSymbol setFrame:clefFrame];
+    trebleCleffSymbol.frame = clefFrame;
     [self addSubview:trebleCleffSymbol];
     
 //    TrebleClefSymbol* tSymbol = [[[TrebleClefSymbol alloc] init] autorelease];
@@ -90,13 +90,13 @@
 //    [self addSubview:tSymbol];
     
     // Draw bass cleff sign
-    [self setTrebleCleffSymbol:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bassCleff.png"]]];
-    clefFrame = [trebleCleffSymbol frame];
+    self.trebleCleffSymbol = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bassCleff.png"]];
+    clefFrame = trebleCleffSymbol.frame;
     clefFrame.size.height = bassCleffFrame.size.height;
     clefFrame.size.width = clefFrame.size.height*.75;
     clefFrame.origin.x = bassCleffFrame.origin.x+5;
     clefFrame.origin.y = bassCleffFrame.origin.y;
-    [trebleCleffSymbol setFrame:clefFrame];
+    trebleCleffSymbol.frame = clefFrame;
     [self addSubview:trebleCleffSymbol];
     
 }

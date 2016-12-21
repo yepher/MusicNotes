@@ -62,7 +62,7 @@
     
     
     if (audio == nil) {
-        [self setAudio:[NSMutableArray arrayWithCapacity:0]];
+        self.audio = [NSMutableArray arrayWithCapacity:0];
     }
     
     [drawingView setShowOutsideLedger:YES];
@@ -71,19 +71,19 @@
     NSArray* names = [NSArray arrayWithContentsOfFile:plistPath];
     
     // Load Audio
-    for (int i = 0; i < [names count]; i++) {
+    for (int i = 0; i < names.count; i++) {
         SystemSoundID soundID;
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:names[i] ofType:@"aif"]], &soundID);  
         NSNumber* audioId = @(soundID);
         [audio addObject:audioId];
     }
     
-    [[self keyboardView] setDelegate:self];
+    self.keyboardView.delegate = self;
     [keyboardView setDoubleEbonySize:YES];
-    [[self octaveSelectionView] setDelegate:self];
+    self.octaveSelectionView.delegate = self;
     
-    [self setGameController:[[GameController alloc] init]];
-    [gameController setDelegate:self];
+    self.gameController = [[GameController alloc] init];
+    gameController.delegate = self;
 
 }
 
@@ -97,15 +97,15 @@
 }
 
 - (void) keysPressed:(NSSet *)keys {
-    NSLog(@"keysPressed=%@", @([keys count]));
+    NSLog(@"keysPressed=%@", @(keys.count));
     
     [gameController keysPressed:keys];
     
     [drawingView addNotes:keys];
     
     for (NSNumber* keyIndex in keys) {
-        if ([audio count] > [keyIndex intValue]) {
-            SystemSoundID soundID = audio[[keyIndex intValue]];
+        if (audio.count > keyIndex.intValue) {
+            SystemSoundID soundID = audio[keyIndex.intValue];
             // Should probably use "AudioServicesAddSystemSoundCompletion" to make 
             // sure we are never playing too many sounds at any one time.
             AudioServicesPlaySystemSound(soundID);
@@ -115,7 +115,7 @@
 
 - (void) rangeChanged: (NSRange) newRange {
     NSLog(@"Got new range %@, %@", @(newRange.location), @(newRange.length));
-    [keyboardView setVisibleKeyRange:newRange];
+    keyboardView.visibleKeyRange = newRange;
     [keyboardView setNeedsLayout];
 }
 

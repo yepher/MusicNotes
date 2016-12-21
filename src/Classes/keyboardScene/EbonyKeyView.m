@@ -13,7 +13,7 @@
 
 
 - (void) internalInit{
-    [[self label] setHidden:YES];
+    [self.label setHidden:YES];
     [self setHelpColorHidden:YES];
 }
 

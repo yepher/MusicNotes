@@ -28,12 +28,12 @@
 
 
 -(void) internalInit {
-    [self setScoreNotes:[NSMutableArray arrayWithCapacity:0]];
-    CGRect drawingFrame = [self frame];
+    self.scoreNotes = [NSMutableArray arrayWithCapacity:0];
+    CGRect drawingFrame = self.frame;
     drawingFrame.origin.x = 0;
     drawingFrame.origin.y = 0;
     
-    [self setStaffDrawingView:[[StaffDrawingView alloc] initWithFrame:drawingFrame]];
+    self.staffDrawingView = [[StaffDrawingView alloc] initWithFrame:drawingFrame];
     [self addSubview:staffDrawingView];
     
     [self setBackgroundColor:HEXCOLOR(0xF7F8E0FF)];
@@ -55,17 +55,17 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    NSLog(@"layoutSubviews w=%f h=%f", [self frame].size.width, [self frame].size.height);
+    NSLog(@"layoutSubviews w=%f h=%f", self.frame.size.width, self.frame.size.height);
     
-    CGRect drawingFrame = [self frame];
+    CGRect drawingFrame = self.frame;
     drawingFrame.origin.x = 0;
     drawingFrame.origin.y = 0;
-    [self.staffDrawingView setFrame:drawingFrame];
+    (self.staffDrawingView).frame = drawingFrame;
 }
 
 - (void) addNotes: (NSSet*) newNotes {
     //if ([scoreNotes count] > 44) {
-    if ( (([scoreNotes count]+4) * NOTE_SPACING) > staffDrawingView.frame.size.width) {
+    if ( ((scoreNotes.count+4) * NOTE_SPACING) > staffDrawingView.frame.size.width) {
     
         [self clearNotes];
     }
@@ -82,7 +82,7 @@
 //        }
 //    }
     
-    NSMutableSet* noteSet = [[NSMutableSet alloc] initWithCapacity:[newNotes count]];
+    NSMutableSet* noteSet = [[NSMutableSet alloc] initWithCapacity:newNotes.count];
     [scoreNotes addObject:noteSet];
     
     for (NSNumber* keyNumber in newNotes) {
@@ -99,14 +99,14 @@
             noteView = [[NoteView alloc] init];
         }
         
-        [noteView setKeyNumber:[keyNumber intValue]];
+        noteView.keyNumber = keyNumber.intValue;
         [self addSubview:noteView];
-        CGRect noteFrame = [noteView frame];
-        noteFrame.origin.x = staffDrawingView.trebleCleffFrame.origin.x + ([scoreNotes count] * NOTE_SPACING);
-        noteFrame.origin.y = [staffDrawingView getNoteYLocation:[keyNumber intValue]];
-        noteFrame.size.height = [staffDrawingView spacing];
+        CGRect noteFrame = noteView.frame;
+        noteFrame.origin.x = staffDrawingView.trebleCleffFrame.origin.x + (scoreNotes.count * NOTE_SPACING);
+        noteFrame.origin.y = [staffDrawingView getNoteYLocation:keyNumber.intValue];
+        noteFrame.size.height = staffDrawingView.spacing;
         noteFrame.size.width = noteFrame.size.height*1.5;
-        [noteView setFrame: noteFrame];
+        noteView.frame = noteFrame;
         
         [noteSet addObject:noteView];
     }
@@ -114,7 +114,7 @@
 
 - (void) clearNotes {
 //    [noteViewCache removeAllObjects];
-    while([scoreNotes count] > 0) {
+    while(scoreNotes.count > 0) {
         NSSet* notesSet = scoreNotes[0];
         [scoreNotes removeObjectAtIndex:0];
         

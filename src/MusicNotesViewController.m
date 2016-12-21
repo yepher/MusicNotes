@@ -41,10 +41,10 @@
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-    [keyboardView setVisibleKeyRange: NSMakeRange(48, 5)];
+    keyboardView.visibleKeyRange = NSMakeRange(48, 5);
     
     if (audio == nil) {
-        [self setAudio:[NSMutableArray arrayWithCapacity:0]];
+        self.audio = [NSMutableArray arrayWithCapacity:0];
     }
     
     [drawingView setShowOutsideLedger:YES];
@@ -53,27 +53,27 @@
     NSArray* names = [NSArray arrayWithContentsOfFile:plistPath];
     
     // Load Audio
-    for (int i = 0; i < [names count]; i++) {
+    for (int i = 0; i < names.count; i++) {
         SystemSoundID soundID;
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:names[i] ofType:@"aif"]], &soundID);  
         NSNumber* audioId = @(soundID);
         [audio addObject:audioId];
     }
     
-    [[self keyboardView] setDelegate:self];
-    [[self octaveSelectionView] setDelegate:self];
+    self.keyboardView.delegate = self;
+    self.octaveSelectionView.delegate = self;
     
     
 }
 
 - (void) keysPressed:(NSSet *)keys {
-    NSLog(@"keysPressed=%@", @([keys count]));
+    NSLog(@"keysPressed=%@", @(keys.count));
     
     [drawingView addNotes:keys];
     
     for (NSNumber* keyIndex in keys) {
-        if ([audio count] > [keyIndex intValue]) {
-            SystemSoundID soundID =(SystemSoundID) [audio[[keyIndex intValue]] unsignedLongValue];
+        if (audio.count > keyIndex.intValue) {
+            SystemSoundID soundID =(SystemSoundID) [audio[keyIndex.intValue] unsignedLongValue];
             AudioServicesPlaySystemSound(soundID);
         }
     }
@@ -81,7 +81,7 @@
 
 - (void) rangeChanged: (NSRange) newRange {
     NSLog(@"Got new range %@, %@", @(newRange.location), @(newRange.length));
-    [keyboardView setVisibleKeyRange:newRange];
+    keyboardView.visibleKeyRange = newRange;
     [keyboardView setNeedsLayout];
 }
 

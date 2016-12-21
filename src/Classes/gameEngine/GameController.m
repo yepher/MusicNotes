@@ -39,7 +39,7 @@
     
     NSSet* keys = [NSSet setWithObject:key];
     
-    [self setCurrentQuestion:keys];
+    self.currentQuestion = keys;
     if (delegate != nil) {
         [delegate gamePresentKeys:keys];
     }
@@ -54,7 +54,7 @@
     NSLog(@"startGame");
 
     if (delegate != nil) {
-        [[self delegate] gameStarted];
+        [self.delegate gameStarted];
         [self nextQuestion];
     } else {
         NSLog(@"Cannot start game without a game delegate.");
@@ -64,10 +64,10 @@
 }
 
 - (void) keysPressed:(NSSet *)keys {
-    NSLog(@"GAME: keysPressed=%@", @([keys count]));
+    NSLog(@"GAME: keysPressed=%@", @(keys.count));
     
     if (currentQuestion != nil) {
-        if ([keys count] != [currentQuestion count]) {
+        if (keys.count != currentQuestion.count) {
             // TODO: Incorrect Answer
             NSLog(@"GAME: Wrong number of keys pressed");
             return;
@@ -82,7 +82,7 @@
         }
         
         if (delegate != nil) {
-            [[self delegate] gameQuestionAnsweredCorrectly];
+            [self.delegate gameQuestionAnsweredCorrectly];
             [self nextQuestion];
         } 
     }
@@ -93,7 +93,7 @@
     
     [self setCurrentQuestion:nil];
     if (delegate != nil) {
-        [[self delegate] gameEnded];
+        [self.delegate gameEnded];
     }
 }
 

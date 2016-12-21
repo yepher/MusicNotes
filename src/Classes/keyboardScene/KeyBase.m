@@ -59,7 +59,7 @@ static UIColor* gColor = nil;
 }
 
 - (void) internalBaseInit {
-    [self setLabel:[[UILabel alloc] init]];
+    self.label = [[UILabel alloc] init];
     helpTextHidden = NO;
     helpColorHidden = NO;
 }
@@ -98,8 +98,8 @@ static UIColor* gColor = nil;
     labelFrame.origin.y = self.frame.size.height - (labelFrame.size.height*1.5);
     labelFrame.origin.x = (self.frame.size.width - labelFrame.size.width)/2;
 
-    [label setFrame:labelFrame];
-    [label setTextAlignment:NSTextAlignmentCenter];
+    label.frame = labelFrame;
+    label.textAlignment = NSTextAlignmentCenter;
     [self addSubview:label];
     [self bringSubviewToFront:label];
 
@@ -113,16 +113,16 @@ static UIColor* gColor = nil;
         [label setHidden:YES];
     } else {
         [label setHidden:NO];
-        if ([label text] != nil) {
-            unichar note = [[label text] characterAtIndex:1];
-            [label setBackgroundColor:[KeyBase colorForNote:note]];
+        if (label.text != nil) {
+            unichar note = [label.text characterAtIndex:1];
+            label.backgroundColor = [KeyBase colorForNote:note];
         }
     }
     
     if (helpTextHidden) {
-        [label setTextColor:[UIColor clearColor]];
+        label.textColor = [UIColor clearColor];
     } else {
-        [label setTextColor:[UIColor blackColor]];
+        label.textColor = [UIColor blackColor];
     }
     
     [label setAdjustsFontSizeToFitWidth:YES];
@@ -150,7 +150,7 @@ static UIColor* gColor = nil;
 }
 
 - (void) setIntId: (NSInteger) intKeyId {
-    [self setKeyId:@(intKeyId)];
+    self.keyId = @(intKeyId);
 }
 
 @end

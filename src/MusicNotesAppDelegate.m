@@ -26,6 +26,7 @@
     [self.window addSubview:viewController.view];
     [self.window makeKeyAndVisible];
 
+    [self.window setRootViewController:viewController];
     return YES;
 }
 

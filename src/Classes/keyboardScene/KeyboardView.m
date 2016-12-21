@@ -36,15 +36,15 @@
     [key setIntId:keyIndex];
     
     [keys addObject:key];
-    [[key label] setText:title];
+    key.label.text = title;
     
     CGRect keyFrame = CGRectZero;
     keyFrame.size.width = ivoryWidth;
     keyFrame.size.height = self.frame.size.height;
     keyFrame.origin.x = ivoryWidth*ivoryIndex;
-    [key setFrame:keyFrame];
+    key.frame = keyFrame;
     
-    [key setHighlightedImage:keyHighlightBackground];
+    key.highlightedImage = keyHighlightBackground;
     
     [key setHighlighted:NO];
     [key setUserInteractionEnabled:NO];
@@ -67,9 +67,9 @@
     }
     keyFrame.size.height = self.frame.size.height * EBONY_KEY_HEIGHT;
     keyFrame.origin.x = ivoryWidth*ivoryIndex - (ebonyWidth /2);
-    [key setFrame:keyFrame];
+    key.frame = keyFrame;
     
-    [key setHighlightedImage:keyHighlightBackground];
+    key.highlightedImage = keyHighlightBackground;
     
     [key setHighlighted:NO];
     [key setUserInteractionEnabled:NO];
@@ -81,9 +81,9 @@
     [self setDoubleEbonySize:NO];
     [self setDelegate:nil];
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"keyboardLayout" ofType:@"plist"];
-    [self setKeyNames:[NSArray arrayWithContentsOfFile:plistPath]];
+    self.keyNames = [NSArray arrayWithContentsOfFile:plistPath];
     
-    [self setKeys:[NSMutableArray arrayWithCapacity:88]];
+    self.keys = [NSMutableArray arrayWithCapacity:88];
     [self setVisibleKeyRange:INITIAL_KEY_RANGE];
 }
 
@@ -91,7 +91,7 @@
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
-    [[self keys] removeAllObjects];
+    [self.keys removeAllObjects];
 }
 
 - (void)layoutSubviews {
@@ -120,7 +120,7 @@
     // Layout rest of keys in range
     NSInteger currentIvoryCount = 0;
     NSInteger currentKeyCount = 0;
-    for (; currentIvoryCount < visibleKeyRange.length && (keyNameOffset + currentKeyCount) < [keyNames count]; currentKeyCount++) {
+    for (; currentIvoryCount < visibleKeyRange.length && (keyNameOffset + currentKeyCount) < keyNames.count; currentKeyCount++) {
         NSInteger index = (keyNameOffset + currentKeyCount);
         keyName = keyNames[(keyNameOffset + currentKeyCount)];
         
@@ -136,7 +136,7 @@
     
     // Special case possible last ebony key
     NSInteger nextKeyIndex = (keyNameOffset+currentKeyCount);
-    if (nextKeyIndex < [keyNames count]) {
+    if (nextKeyIndex < keyNames.count) {
         keyName = keyNames[nextKeyIndex];
         if ([keyName hasSuffix:@"s"]) {
             [self addEbonyKey:nextKeyIndex ivoryIndex:currentIvoryCount ivoryWidth:ivoryWidth * EBONY_KEY_WIDTH ebonyWidth:EBONY_KEY_WIDTH keyBackground:ebonyKeyBackground keyHighlightBackground:ebonyKeyHighlightBackground];
@@ -164,7 +164,7 @@
     
     NSMutableSet* pressedKeys = [NSMutableSet setWithCapacity:0];
 
-    for (int keyIndex = 0; keyIndex < [keys count]; keyIndex++) {
+    for (int keyIndex = 0; keyIndex < keys.count; keyIndex++) {
         KeyBase* key = keys[keyIndex];
         BOOL keyIsPressed = NO;
         for (UITouch* touch in allTouches) {
@@ -177,16 +177,16 @@
                     if (keyIndex > 0) {
                         UIImageView* previousKey = keys[keyIndex-1];
                         
-                        if([previousKey isKindOfClass:[EbonyKeyView class]] && CGRectContainsPoint([previousKey frame], location)) {
+                        if([previousKey isKindOfClass:[EbonyKeyView class]] && CGRectContainsPoint(previousKey.frame, location)) {
                             ignore = YES;
                         }
                     }
                     
-                    if (keyIndex < [keys count]-1) {
+                    if (keyIndex < keys.count-1) {
                         
                         UIImageView* nextKey = keys[keyIndex+1];
                         if ([nextKey isKindOfClass:[EbonyKeyView class]]) {
-                            if(CGRectContainsPoint([nextKey frame], location)) {
+                            if(CGRectContainsPoint(nextKey.frame, location)) {
                                 ignore = YES;
                             }
                         }
@@ -199,7 +199,7 @@
                         [key setHighlighted:YES];
                         
                         if (delegate != nil) {
-                            [pressedKeys addObject:[key keyId]];
+                            [pressedKeys addObject:key.keyId];
                         }
                     }
                 }
@@ -211,7 +211,7 @@
         }
     }
     
-    if (delegate != nil && [pressedKeys count] > 0) {
+    if (delegate != nil && pressedKeys.count > 0) {
         [delegate keysPressed:pressedKeys];
     }
 }
@@ -230,10 +230,10 @@
             CGPoint location = [touch locationInView:self];
             if(CGRectContainsPoint(key.frame, location)) 
             {
-                if ([touch phase] == UITouchPhaseEnded || [touch phase] == UITouchPhaseCancelled) {
+                if (touch.phase == UITouchPhaseEnded || touch.phase == UITouchPhaseCancelled) {
                     [key setHighlighted:NO];
                 } else {
-                    NSLog(@"Unhandled touch phase: %@", @([touch phase]) );
+                    NSLog(@"Unhandled touch phase: %@", @(touch.phase) );
                 }
             }
         }

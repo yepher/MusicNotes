@@ -51,9 +51,9 @@
     // TODO: handle case with flats in key signature...
     if (noteImage == nil) {
         if ([keyInfo hasSuffix:@"s"]) {
-            [self setNoteImage:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wholeNote_sharp.png"]]];
+            self.noteImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wholeNote_sharp.png"]];
         } else {
-            [self setNoteImage:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wholeNote.png"]]];
+            self.noteImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wholeNote.png"]];
 
         }
 
@@ -61,7 +61,7 @@
         CGRect noteFrame = self.frame;
         noteFrame.origin.x = 0;
         noteFrame.origin.y = 0;
-        [noteImage setFrame:noteFrame];
+        noteImage.frame = noteFrame;
         //
 //        FlatSymbol* flatSymbol = [[[FlatSymbol alloc] init] autorelease];
 //        [flatSymbol setFrame:noteFrame];
@@ -69,7 +69,7 @@
     }
     
     unichar note = [keyInfo characterAtIndex:1];
-    [noteImage setBackgroundColor:[KeyBase colorForNote:note]];
+    noteImage.backgroundColor = [KeyBase colorForNote:note];
 }
 
 

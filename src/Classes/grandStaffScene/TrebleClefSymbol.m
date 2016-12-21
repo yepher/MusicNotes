@@ -44,9 +44,9 @@
     //CGContextClearRect(ctx, [self frame]);
 
     if (fillPath) {
-        CGContextSetFillColor(ctx, CGColorGetComponents( [fillColor CGColor]) );
+        CGContextSetFillColor(ctx, CGColorGetComponents( fillColor.CGColor) );
     }
-    CGContextSetStrokeColor(ctx, CGColorGetComponents( [strokeColor CGColor])); 
+    CGContextSetStrokeColor(ctx, CGColorGetComponents( strokeColor.CGColor)); 
     CGContextSetLineWidth(ctx, .5);
     // movetoAbs(181.25, 298.8657)
     CGContextMoveToPoint(ctx, [self normalizeX:181.25]*rescaleXBy, [self normalizeY:298.8657]*rescaleYBy);
