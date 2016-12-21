@@ -1,3 +1,6 @@
+**Note**: This project is desperatly out of date. It will atleast run again now but the layout is a mess. I am open to pull requests to fix issues.
+
+
 MusicNotes
 ==========
 
